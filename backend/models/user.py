@@ -27,6 +27,10 @@ class User(Base):
     date_of_birth = Column(Date, nullable=False)
 
     profile_picture = Column(String(500), nullable=True)
+    cloudinary_public_id = Column(
+    String(255),
+    nullable=True
+    )
 
     is_active = Column(Boolean, default=True)
 

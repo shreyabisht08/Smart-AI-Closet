@@ -4,7 +4,7 @@ from sqlalchemy import text
 from database import Base, engine
 from models.user import User
 from api.auth import router as auth_router
-
+from api.profile import router as profile_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -13,6 +13,7 @@ app = FastAPI(
     version="1.0.0"
 )
 app.include_router(auth_router)
+app.include_router(profile_router)
 
 @app.get("/")
 def root():
